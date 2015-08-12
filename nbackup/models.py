@@ -6,7 +6,7 @@ class Devices(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     IP = db.Column(db.String(15), primary_key=True)
     hostname = db.Column(db.String(350))
-    device_type = db.Column(db.String(20))  # currently support cisco, juniper
+    type = db.Column(db.String(20))  # currently support cisco, juniper
     group_id = db.Column(db.Integer, db.ForeignKey('devicegroups.id'))
     active = db.Column(db.Boolean)  # don't backup this device if False
     login_by_ssh = db.Column(db.Boolean)  # use telnet if login_by_ssh is False
