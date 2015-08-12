@@ -13,7 +13,7 @@ class Devices(db.Model):
     last_update = db.Column(db.Date)
 
     def __repr__(self):
-        print('{0}: {1}'.format(self.device_type, self.hostname))
+        return '{0}: {1}'.format(self.device_type, self.hostname)
 
 
 class DeviceGroups(db.Model):
@@ -24,7 +24,7 @@ class DeviceGroups(db.Model):
     backup_frequency = db.Column(db.Integer) # 0: daily, 1: weekly, 2: monthly
 
     def __repr__(self):
-        print('group {}'.format(self.name))
+        return 'group {}'.format(self.name)
 
 
 class Users(db.Model):
@@ -35,4 +35,4 @@ class Users(db.Model):
     read_only = db.Column(db.Boolean)
 
     def __repr__(self):
-        print('user {}'.format(self.username))
+        return 'user {}'.format(self.username)
