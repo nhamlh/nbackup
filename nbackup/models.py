@@ -21,7 +21,7 @@ class DeviceGroups(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(350))
     devices = db.relationship('Devices', backref='group', lazy='dynamic')
-    backup_time = db.Column(db.Date)
+    backup_frequency = db.Column(db.Integer) # 0: daily, 1: weekly, 2: monthly
 
     def __repr__(self):
         print('group {}'.format(self.name))
